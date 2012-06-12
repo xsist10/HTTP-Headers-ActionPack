@@ -1,0 +1,23 @@
+---
+abstract: 'HTTP Action, Adventure and Excitement'
+author:
+  - 'Stevan Little <stevan.little@iinteractive.com>'
+build_requires:
+  Test::Fatal: 0.003
+  Test::More: 0.88
+configure_requires:
+  ExtUtils::MakeMaker: 6.30
+dynamic_config: 0
+generated_by: 'Dist::Zilla version 4.300009, CPAN::Meta::Converter version 2.120630'
+license: perl
+meta-spec:
+  url: http://module-build.sourceforge.net/META-spec-v1.4.html
+  version: 1.4
+name: HTTP-Headers-ActionPack
+requires:
+  HTTP::Date: 0
+  HTTP::Message: 0
+  MIME::Base64: 0
+  Module::Runtime: 0
+  URI: 0
+version: 0.01
