@@ -12,6 +12,9 @@ my %WriteMakefileArgs = (
   "ABSTRACT" => "HTTP Action, Adventure and Excitement",
   "AUTHOR" => "Stevan Little <stevan.little\@iinteractive.com>",
   "BUILD_REQUIRES" => {
+    "HTTP::Headers" => 0,
+    "HTTP::Request" => 0,
+    "HTTP::Response" => 0,
     "Test::Fatal" => "0.003",
     "Test::More" => "0.88"
   },
@@ -23,13 +26,24 @@ my %WriteMakefileArgs = (
   "LICENSE" => "perl",
   "NAME" => "HTTP::Headers::ActionPack",
   "PREREQ_PM" => {
+    "Carp" => 0,
     "HTTP::Date" => 0,
+    "HTTP::Headers::Util" => 0,
     "HTTP::Message" => 0,
+    "HTTP::Message::PSGI" => 0,
     "MIME::Base64" => 0,
     "Module::Runtime" => 0,
-    "URI" => 0
+    "Scalar::Util" => 0,
+    "Sub::Exporter" => 0,
+    "Time::Piece" => 0,
+    "URI" => 0,
+    "URI::Escape" => 0,
+    "overload" => 0,
+    "parent" => 0,
+    "strict" => 0,
+    "warnings" => 0
   },
-  "VERSION" => "0.01",
+  "VERSION" => "0.02",
   "test" => {
     "TESTS" => "t/*.t"
   }

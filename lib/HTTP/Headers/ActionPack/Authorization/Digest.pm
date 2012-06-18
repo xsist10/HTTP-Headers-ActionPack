@@ -21,7 +21,7 @@ HTTP::Headers::ActionPack::Authorization::Digest - The Digest Authorization Head
 
 =head1 VERSION
 
-version 0.01
+version 0.02
 
 =head1 SYNOPSIS
 

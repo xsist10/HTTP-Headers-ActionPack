@@ -20,7 +20,7 @@ HTTP::Headers::ActionPack::WWWAuthenticate - The WWW-Authenticate Header
 
 =head1 VERSION
 
-version 0.01
+version 0.02
 
 =head1 SYNOPSIS
 

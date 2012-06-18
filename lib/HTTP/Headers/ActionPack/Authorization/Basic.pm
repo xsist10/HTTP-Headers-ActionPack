@@ -56,7 +56,7 @@ HTTP::Headers::ActionPack::Authorization::Basic - The Basic Authorization Header
 
 =head1 VERSION
 
-version 0.01
+version 0.02
 
 =head1 SYNOPSIS
 

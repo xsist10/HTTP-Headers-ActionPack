@@ -39,7 +39,7 @@ HTTP::Headers::ActionPack::Core::BaseHeaderList - A Base Header List
 
 =head1 VERSION
 
-version 0.01
+version 0.02
 
 =head1 SYNOPSIS
 
