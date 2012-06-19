@@ -1,4 +1,10 @@
 package HTTP::Headers::ActionPack::Core::Base;
+BEGIN {
+  $HTTP::Headers::ActionPack::Core::Base::AUTHORITY = 'cpan:STEVAN';
+}
+{
+  $HTTP::Headers::ActionPack::Core::Base::VERSION = '0.03';
+}
 # ABSTRACT: A Base class
 
 use strict;
@@ -39,7 +45,7 @@ HTTP::Headers::ActionPack::Core::Base - A Base class
 
 =head1 VERSION
 
-version 0.02
+version 0.03
 
 =head1 SYNOPSIS
 

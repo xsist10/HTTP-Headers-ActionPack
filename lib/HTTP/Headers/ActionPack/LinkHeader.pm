@@ -1,4 +1,10 @@
 package HTTP::Headers::ActionPack::LinkHeader;
+BEGIN {
+  $HTTP::Headers::ActionPack::LinkHeader::AUTHORITY = 'cpan:STEVAN';
+}
+{
+  $HTTP::Headers::ActionPack::LinkHeader::VERSION = '0.03';
+}
 # ABSTRACT: A Link
 
 use strict;
@@ -89,7 +95,7 @@ HTTP::Headers::ActionPack::LinkHeader - A Link
 
 =head1 VERSION
 
-version 0.02
+version 0.03
 
 =head1 SYNOPSIS
 

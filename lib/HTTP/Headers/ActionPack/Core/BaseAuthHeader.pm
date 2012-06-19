@@ -1,4 +1,10 @@
 package HTTP::Headers::ActionPack::Core::BaseAuthHeader;
+BEGIN {
+  $HTTP::Headers::ActionPack::Core::BaseAuthHeader::AUTHORITY = 'cpan:STEVAN';
+}
+{
+  $HTTP::Headers::ActionPack::Core::BaseAuthHeader::VERSION = '0.03';
+}
 # ABSTRACT: The base Auth Header
 
 use strict;
@@ -51,7 +57,7 @@ HTTP::Headers::ActionPack::Core::BaseAuthHeader - The base Auth Header
 
 =head1 VERSION
 
-version 0.02
+version 0.03
 
 =head1 SYNOPSIS
 

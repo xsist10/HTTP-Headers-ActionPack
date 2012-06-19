@@ -1,4 +1,10 @@
 package HTTP::Headers::ActionPack::WWWAuthenticate;
+BEGIN {
+  $HTTP::Headers::ActionPack::WWWAuthenticate::AUTHORITY = 'cpan:STEVAN';
+}
+{
+  $HTTP::Headers::ActionPack::WWWAuthenticate::VERSION = '0.03';
+}
 # ABSTRACT: The WWW-Authenticate Header
 
 use strict;
@@ -20,7 +26,7 @@ HTTP::Headers::ActionPack::WWWAuthenticate - The WWW-Authenticate Header
 
 =head1 VERSION
 
-version 0.02
+version 0.03
 
 =head1 SYNOPSIS
 

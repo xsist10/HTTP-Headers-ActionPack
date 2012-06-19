@@ -1,4 +1,10 @@
 package HTTP::Headers::ActionPack::MediaTypeList;
+BEGIN {
+  $HTTP::Headers::ActionPack::MediaTypeList::AUTHORITY = 'cpan:STEVAN';
+}
+{
+  $HTTP::Headers::ActionPack::MediaTypeList::VERSION = '0.03';
+}
 # ABSTRACT: A Priority List customized for Media Types
 
 use strict;
@@ -77,7 +83,7 @@ HTTP::Headers::ActionPack::MediaTypeList - A Priority List customized for Media 
 
 =head1 VERSION
 
-version 0.02
+version 0.03
 
 =head1 SYNOPSIS
 

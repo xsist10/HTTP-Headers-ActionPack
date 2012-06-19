@@ -1,4 +1,10 @@
 package HTTP::Headers::ActionPack::Authorization::Digest;
+BEGIN {
+  $HTTP::Headers::ActionPack::Authorization::Digest::AUTHORITY = 'cpan:STEVAN';
+}
+{
+  $HTTP::Headers::ActionPack::Authorization::Digest::VERSION = '0.03';
+}
 # ABSTRACT: The Digest Authorization Header
 
 use strict;
@@ -21,7 +27,7 @@ HTTP::Headers::ActionPack::Authorization::Digest - The Digest Authorization Head
 
 =head1 VERSION
 
-version 0.02
+version 0.03
 
 =head1 SYNOPSIS
 

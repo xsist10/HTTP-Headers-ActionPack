@@ -1,4 +1,10 @@
 package HTTP::Headers::ActionPack::LinkList;
+BEGIN {
+  $HTTP::Headers::ActionPack::LinkList::AUTHORITY = 'cpan:STEVAN';
+}
+{
+  $HTTP::Headers::ActionPack::LinkList::VERSION = '0.03';
+}
 # ABSTRACT: A List of Link objects
 
 use strict;
@@ -36,7 +42,7 @@ HTTP::Headers::ActionPack::LinkList - A List of Link objects
 
 =head1 VERSION
 
-version 0.02
+version 0.03
 
 =head1 SYNOPSIS
 

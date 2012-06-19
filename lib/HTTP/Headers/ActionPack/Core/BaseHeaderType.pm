@@ -1,4 +1,10 @@
 package HTTP::Headers::ActionPack::Core::BaseHeaderType;
+BEGIN {
+  $HTTP::Headers::ActionPack::Core::BaseHeaderType::AUTHORITY = 'cpan:STEVAN';
+}
+{
+  $HTTP::Headers::ActionPack::Core::BaseHeaderType::VERSION = '0.03';
+}
 # ABSTRACT: A Base header type
 
 use strict;
@@ -49,7 +55,7 @@ HTTP::Headers::ActionPack::Core::BaseHeaderType - A Base header type
 
 =head1 VERSION
 
-version 0.02
+version 0.03
 
 =head1 SYNOPSIS
 

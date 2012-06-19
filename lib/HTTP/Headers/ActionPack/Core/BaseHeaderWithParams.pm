@@ -1,4 +1,10 @@
 package HTTP::Headers::ActionPack::Core::BaseHeaderWithParams;
+BEGIN {
+  $HTTP::Headers::ActionPack::Core::BaseHeaderWithParams::AUTHORITY = 'cpan:STEVAN';
+}
+{
+  $HTTP::Headers::ActionPack::Core::BaseHeaderWithParams::VERSION = '0.03';
+}
 # ABSTRACT: A Base header type with params
 
 use strict;
@@ -67,7 +73,7 @@ HTTP::Headers::ActionPack::Core::BaseHeaderWithParams - A Base header type with 
 
 =head1 VERSION
 
-version 0.02
+version 0.03
 
 =head1 SYNOPSIS
 

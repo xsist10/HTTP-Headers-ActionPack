@@ -1,4 +1,10 @@
 package HTTP::Headers::ActionPack::Authorization::Basic;
+BEGIN {
+  $HTTP::Headers::ActionPack::Authorization::Basic::AUTHORITY = 'cpan:STEVAN';
+}
+{
+  $HTTP::Headers::ActionPack::Authorization::Basic::VERSION = '0.03';
+}
 # ABSTRACT: The Basic Authorization Header
 
 use strict;
@@ -56,7 +62,7 @@ HTTP::Headers::ActionPack::Authorization::Basic - The Basic Authorization Header
 
 =head1 VERSION
 
-version 0.02
+version 0.03
 
 =head1 SYNOPSIS
 

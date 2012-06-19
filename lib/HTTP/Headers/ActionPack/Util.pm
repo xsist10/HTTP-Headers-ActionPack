@@ -1,4 +1,10 @@
 package HTTP::Headers::ActionPack::Util;
+BEGIN {
+  $HTTP::Headers::ActionPack::Util::AUTHORITY = 'cpan:STEVAN';
+}
+{
+  $HTTP::Headers::ActionPack::Util::VERSION = '0.03';
+}
 # ABSTRACT: General Utility module
 
 use strict;
@@ -59,7 +65,7 @@ HTTP::Headers::ActionPack::Util - General Utility module
 
 =head1 VERSION
 
-version 0.02
+version 0.03
 
 =head1 SYNOPSIS
 

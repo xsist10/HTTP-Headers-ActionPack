@@ -42,3 +42,4 @@ t/100-http-headers.t
 t/101-http-request.t
 t/102-http-response.t
 t/200-plack.t
+weaver.ini

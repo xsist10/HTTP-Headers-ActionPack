@@ -1,4 +1,10 @@
 package HTTP::Headers::ActionPack::AuthenticationInfo;
+BEGIN {
+  $HTTP::Headers::ActionPack::AuthenticationInfo::AUTHORITY = 'cpan:STEVAN';
+}
+{
+  $HTTP::Headers::ActionPack::AuthenticationInfo::VERSION = '0.03';
+}
 # ABSTRACT: The Authentication-Info Header
 
 use strict;
@@ -38,7 +44,7 @@ HTTP::Headers::ActionPack::AuthenticationInfo - The Authentication-Info Header
 
 =head1 VERSION
 
-version 0.02
+version 0.03
 
 =head1 SYNOPSIS
 

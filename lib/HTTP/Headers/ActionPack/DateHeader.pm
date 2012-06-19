@@ -1,4 +1,10 @@
 package HTTP::Headers::ActionPack::DateHeader;
+BEGIN {
+  $HTTP::Headers::ActionPack::DateHeader::AUTHORITY = 'cpan:STEVAN';
+}
+{
+  $HTTP::Headers::ActionPack::DateHeader::VERSION = '0.03';
+}
 # ABSTRACT: A Date Header
 
 use strict;
@@ -51,7 +57,7 @@ HTTP::Headers::ActionPack::DateHeader - A Date Header
 
 =head1 VERSION
 
-version 0.02
+version 0.03
 
 =head1 SYNOPSIS
 

@@ -1,4 +1,10 @@
 package HTTP::Headers::ActionPack::MediaType;
+BEGIN {
+  $HTTP::Headers::ActionPack::MediaType::AUTHORITY = 'cpan:STEVAN';
+}
+{
+  $HTTP::Headers::ActionPack::MediaType::VERSION = '0.03';
+}
 # ABSTRACT: A Media Type
 
 use strict;
@@ -96,7 +102,7 @@ HTTP::Headers::ActionPack::MediaType - A Media Type
 
 =head1 VERSION
 
-version 0.02
+version 0.03
 
 =head1 SYNOPSIS
 
