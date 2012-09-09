@@ -11,6 +11,7 @@ lib/HTTP/Headers/ActionPack/AuthenticationInfo.pm
 lib/HTTP/Headers/ActionPack/Authorization.pm
 lib/HTTP/Headers/ActionPack/Authorization/Basic.pm
 lib/HTTP/Headers/ActionPack/Authorization/Digest.pm
+lib/HTTP/Headers/ActionPack/ContentNegotiation.pm
 lib/HTTP/Headers/ActionPack/Core/Base.pm
 lib/HTTP/Headers/ActionPack/Core/BaseAuthHeader.pm
 lib/HTTP/Headers/ActionPack/Core/BaseHeaderList.pm
@@ -42,4 +43,8 @@ t/100-http-headers.t
 t/101-http-request.t
 t/102-http-response.t
 t/200-plack.t
+t/300-content-negotiation-media-type.t
+t/301-content-negotiation-language.t
+t/302-content-negotiation-charset.t
+t/303-content-negotiation-encoding.t
 weaver.ini

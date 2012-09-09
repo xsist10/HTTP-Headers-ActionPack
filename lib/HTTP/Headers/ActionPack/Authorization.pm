@@ -3,7 +3,7 @@ BEGIN {
   $HTTP::Headers::ActionPack::Authorization::AUTHORITY = 'cpan:STEVAN';
 }
 {
-  $HTTP::Headers::ActionPack::Authorization::VERSION = '0.03';
+  $HTTP::Headers::ActionPack::Authorization::VERSION = '0.04';
 }
 # ABSTRACT: The Authorization Header factory
 
@@ -30,7 +30,7 @@ sub new_from_string {
 
 1;
 
-
+__END__
 
 =pod
 
@@ -40,7 +40,7 @@ HTTP::Headers::ActionPack::Authorization - The Authorization Header factory
 
 =head1 VERSION
 
-version 0.03
+version 0.04
 
 =head1 SYNOPSIS
 
@@ -127,7 +127,3 @@ This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
 
 =cut
-
-
-__END__
-

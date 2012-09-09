@@ -3,7 +3,7 @@ BEGIN {
   $HTTP::Headers::ActionPack::Authorization::Basic::AUTHORITY = 'cpan:STEVAN';
 }
 {
-  $HTTP::Headers::ActionPack::Authorization::Basic::VERSION = '0.03';
+  $HTTP::Headers::ActionPack::Authorization::Basic::VERSION = '0.04';
 }
 # ABSTRACT: The Basic Authorization Header
 
@@ -52,7 +52,7 @@ sub as_string {
 
 1;
 
-
+__END__
 
 =pod
 
@@ -62,7 +62,7 @@ HTTP::Headers::ActionPack::Authorization::Basic - The Basic Authorization Header
 
 =head1 VERSION
 
-version 0.03
+version 0.04
 
 =head1 SYNOPSIS
 
@@ -129,7 +129,3 @@ This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
 
 =cut
-
-
-__END__
-

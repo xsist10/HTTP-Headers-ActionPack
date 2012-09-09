@@ -3,7 +3,7 @@ BEGIN {
   $HTTP::Headers::ActionPack::AuthenticationInfo::AUTHORITY = 'cpan:STEVAN';
 }
 {
-  $HTTP::Headers::ActionPack::AuthenticationInfo::VERSION = '0.03';
+  $HTTP::Headers::ActionPack::AuthenticationInfo::VERSION = '0.04';
 }
 # ABSTRACT: The Authentication-Info Header
 
@@ -34,7 +34,7 @@ sub as_string {
 
 1;
 
-
+__END__
 
 =pod
 
@@ -44,7 +44,7 @@ HTTP::Headers::ActionPack::AuthenticationInfo - The Authentication-Info Header
 
 =head1 VERSION
 
-version 0.03
+version 0.04
 
 =head1 SYNOPSIS
 
@@ -93,7 +93,3 @@ This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
 
 =cut
-
-
-__END__
-

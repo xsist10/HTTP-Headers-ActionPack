@@ -3,7 +3,7 @@ BEGIN {
   $HTTP::Headers::ActionPack::LinkList::AUTHORITY = 'cpan:STEVAN';
 }
 {
-  $HTTP::Headers::ActionPack::LinkList::VERSION = '0.03';
+  $HTTP::Headers::ActionPack::LinkList::VERSION = '0.04';
 }
 # ABSTRACT: A List of Link objects
 
@@ -32,7 +32,7 @@ sub iterable { @{ (shift)->items } }
 
 1;
 
-
+__END__
 
 =pod
 
@@ -42,7 +42,7 @@ HTTP::Headers::ActionPack::LinkList - A List of Link objects
 
 =head1 VERSION
 
-version 0.03
+version 0.04
 
 =head1 SYNOPSIS
 
@@ -75,7 +75,3 @@ This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
 
 =cut
-
-
-__END__
-

@@ -3,7 +3,7 @@ BEGIN {
   $HTTP::Headers::ActionPack::DateHeader::AUTHORITY = 'cpan:STEVAN';
 }
 {
-  $HTTP::Headers::ActionPack::DateHeader::VERSION = '0.03';
+  $HTTP::Headers::ActionPack::DateHeader::VERSION = '0.04';
 }
 # ABSTRACT: A Date Header
 
@@ -47,7 +47,7 @@ sub date { (shift)->{'date'} }
 
 1;
 
-
+__END__
 
 =pod
 
@@ -57,7 +57,7 @@ HTTP::Headers::ActionPack::DateHeader - A Date Header
 
 =head1 VERSION
 
-version 0.03
+version 0.04
 
 =head1 SYNOPSIS
 
@@ -144,7 +144,3 @@ This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
 
 =cut
-
-
-__END__
-

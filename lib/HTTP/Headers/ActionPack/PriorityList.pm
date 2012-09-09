@@ -3,7 +3,7 @@ BEGIN {
   $HTTP::Headers::ActionPack::PriorityList::AUTHORITY = 'cpan:STEVAN';
 }
 {
-  $HTTP::Headers::ActionPack::PriorityList::VERSION = '0.03';
+  $HTTP::Headers::ActionPack::PriorityList::VERSION = '0.04';
 }
 # ABSTRACT: A Priority List
 
@@ -80,7 +80,7 @@ sub iterable {
 
 1;
 
-
+__END__
 
 =pod
 
@@ -90,7 +90,7 @@ HTTP::Headers::ActionPack::PriorityList - A Priority List
 
 =head1 VERSION
 
-version 0.03
+version 0.04
 
 =head1 SYNOPSIS
 
@@ -161,7 +161,3 @@ This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
 
 =cut
-
-
-__END__
-

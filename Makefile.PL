@@ -30,7 +30,7 @@ my %WriteMakefileArgs = (
     "HTTP::Date" => 0,
     "HTTP::Headers::Util" => 0,
     "HTTP::Message" => 0,
-    "HTTP::Message::PSGI" => 0,
+    "List::Util" => 0,
     "MIME::Base64" => 0,
     "Module::Runtime" => 0,
     "Scalar::Util" => 0,
@@ -43,7 +43,7 @@ my %WriteMakefileArgs = (
     "strict" => 0,
     "warnings" => 0
   },
-  "VERSION" => "0.03",
+  "VERSION" => "0.04",
   "test" => {
     "TESTS" => "t/*.t"
   }

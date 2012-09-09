@@ -3,7 +3,7 @@ BEGIN {
   $HTTP::Headers::ActionPack::AUTHORITY = 'cpan:STEVAN';
 }
 {
-  $HTTP::Headers::ActionPack::VERSION = '0.03';
+  $HTTP::Headers::ActionPack::VERSION = '0.04';
 }
 # ABSTRACT: HTTP Action, Adventure and Excitement
 
@@ -64,6 +64,10 @@ sub classes  { keys %{ (shift)->{'classes'} } }
 sub has_mapping {
     my ($self, $header_name) = @_;
     exists $self->{'mappings'}->{ lc $header_name } ? 1 : 0
+}
+
+sub get_content_negotiator {
+    use_module('HTTP::Headers::ActionPack::ContentNegotiation')->new( shift );
 }
 
 sub create {
@@ -128,7 +132,7 @@ sub _inflate_plack_request {
 
 1;
 
-
+__END__
 
 =pod
 
@@ -138,7 +142,7 @@ HTTP::Headers::ActionPack - HTTP Action, Adventure and Excitement
 
 =head1 VERSION
 
-version 0.03
+version 0.04
 
 =head1 SYNOPSIS
 
@@ -216,6 +220,10 @@ This returns the list of supported classes, which is by default
 the list of classes included in this modules, but it also
 will grab any additionally classes that were specified in the
 C<%mappings> parameter to C<new> (see above).
+
+=item C<get_content_negotiator>
+
+Returns an instance of L<HTTP::Headers::ActionPack::ContentNegotiation>.
 
 =item C<create( $class_name, $args )>
 
@@ -295,7 +303,3 @@ This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
 
 =cut
-
-
-__END__
-
