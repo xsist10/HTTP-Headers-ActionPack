@@ -3,7 +3,7 @@ BEGIN {
   $HTTP::Headers::ActionPack::AUTHORITY = 'cpan:STEVAN';
 }
 {
-  $HTTP::Headers::ActionPack::VERSION = '0.04';
+  $HTTP::Headers::ActionPack::VERSION = '0.05';
 }
 # ABSTRACT: HTTP Action, Adventure and Excitement
 
@@ -112,7 +112,8 @@ sub _inflate_http_headers {
     my ($self, $http_headers) = @_;
     foreach my $header ( keys %{ $self->{'mappings'} } ) {
         if ( my $old = $http_headers->header( $header ) ) {
-            $http_headers->header( $header => $self->create_header( $header, $old ) );
+            $http_headers->header( $header => $self->create_header( $header, $old ) )
+                unless blessed $old && $old->isa('HTTP::Headers::ActionPack::Core::Base');
         }
     }
     return $http_headers;
@@ -142,7 +143,7 @@ HTTP::Headers::ActionPack - HTTP Action, Adventure and Excitement
 
 =head1 VERSION
 
-version 0.04
+version 0.05
 
 =head1 SYNOPSIS
 

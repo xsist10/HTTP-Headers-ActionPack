@@ -3,7 +3,7 @@ BEGIN {
   $HTTP::Headers::ActionPack::Core::Base::AUTHORITY = 'cpan:STEVAN';
 }
 {
-  $HTTP::Headers::ActionPack::Core::Base::VERSION = '0.04';
+  $HTTP::Headers::ActionPack::Core::Base::VERSION = '0.05';
 }
 # ABSTRACT: A Base class
 
@@ -45,7 +45,7 @@ HTTP::Headers::ActionPack::Core::Base - A Base class
 
 =head1 VERSION
 
-version 0.04
+version 0.05
 
 =head1 SYNOPSIS
 

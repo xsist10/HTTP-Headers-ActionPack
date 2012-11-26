@@ -3,7 +3,7 @@ BEGIN {
   $HTTP::Headers::ActionPack::Core::BaseAuthHeader::AUTHORITY = 'cpan:STEVAN';
 }
 {
-  $HTTP::Headers::ActionPack::Core::BaseAuthHeader::VERSION = '0.04';
+  $HTTP::Headers::ActionPack::Core::BaseAuthHeader::VERSION = '0.05';
 }
 # ABSTRACT: The base Auth Header
 
@@ -57,7 +57,7 @@ HTTP::Headers::ActionPack::Core::BaseAuthHeader - The base Auth Header
 
 =head1 VERSION
 
-version 0.04
+version 0.05
 
 =head1 SYNOPSIS
 

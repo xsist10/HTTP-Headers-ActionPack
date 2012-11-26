@@ -3,7 +3,7 @@ BEGIN {
   $HTTP::Headers::ActionPack::Core::BaseHeaderList::AUTHORITY = 'cpan:STEVAN';
 }
 {
-  $HTTP::Headers::ActionPack::Core::BaseHeaderList::VERSION = '0.04';
+  $HTTP::Headers::ActionPack::Core::BaseHeaderList::VERSION = '0.05';
 }
 # ABSTRACT: A Base Header List
 
@@ -45,7 +45,7 @@ HTTP::Headers::ActionPack::Core::BaseHeaderList - A Base Header List
 
 =head1 VERSION
 
-version 0.04
+version 0.05
 
 =head1 SYNOPSIS
 

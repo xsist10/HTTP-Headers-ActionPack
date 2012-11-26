@@ -3,7 +3,7 @@ BEGIN {
   $HTTP::Headers::ActionPack::Authorization::AUTHORITY = 'cpan:STEVAN';
 }
 {
-  $HTTP::Headers::ActionPack::Authorization::VERSION = '0.04';
+  $HTTP::Headers::ActionPack::Authorization::VERSION = '0.05';
 }
 # ABSTRACT: The Authorization Header factory
 
@@ -40,7 +40,7 @@ HTTP::Headers::ActionPack::Authorization - The Authorization Header factory
 
 =head1 VERSION
 
-version 0.04
+version 0.05
 
 =head1 SYNOPSIS
 
