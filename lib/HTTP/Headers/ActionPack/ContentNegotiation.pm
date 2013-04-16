@@ -3,7 +3,7 @@ BEGIN {
   $HTTP::Headers::ActionPack::ContentNegotiation::AUTHORITY = 'cpan:STEVAN';
 }
 {
-  $HTTP::Headers::ActionPack::ContentNegotiation::VERSION = '0.05';
+  $HTTP::Headers::ActionPack::ContentNegotiation::VERSION = '0.06';
 }
 # ABSTRACT: A class to handle content negotiation
 
@@ -35,39 +35,21 @@ sub choose_media_type {
     foreach my $request ( $requested->iterable ) {
         my $requested_type = $request->[1];
         $chosen = _media_match( $requested_type, $parsed_provided );
-        last if $chosen;
+        return $chosen if $chosen;
     }
 
-    ($chosen || return)
+    return;
 }
 
 sub choose_language {
     my ($self, $provided, $header) = @_;
 
-    my $language;
-    my $requested     = blessed $header ? $header : $self->action_pack->create( 'PriorityList' => $header );
-    my $star_priority = $requested->priority_of('*');
-    my $any_ok        = $star_priority && $star_priority > 0.0;
-
-    my $accepted      = first {
-        my ($priority, $range) = @$_;
-        if ( $priority == 0.0 ) {
-            $provided = [ grep { _language_match( $range, $_ )  } @$provided ];
-            return 0;
-        }
-        else {
-            return (grep { _language_match( $range, $_ ) } @$provided) ? 1 : 0;
-        }
-    } $requested->iterable;
-
-    if ( $accepted ) {
-        $language = first { _language_match( $accepted->[-1], $_ ) } @$provided;
-    }
-    elsif ( $any_ok ) {
-        $language = $provided->[0];
-    }
-
-    $language;
+    return $self->_make_choice(
+        choices => $provided,
+        header  => $header,
+        class   => 'AcceptLanguage',
+        matcher => \&_language_match,
+    );
 }
 
 sub choose_charset {
@@ -77,48 +59,65 @@ sub choose_charset {
     # Making the default charset UTF-8, which
     # is maybe sensible, I dunno.
     # - SL
-    if ( my $charset = $self->make_choice( $provided, $header, 'UTF-8' )) {
-        return $charset;
-    }
-
-    return;
+    return $self->_make_choice(
+        choices => $provided,
+        header  => $header,
+        class   => 'AcceptCharset',
+        default => 'UTF-8',
+        matcher => \&_simple_match,
+    );
 }
 
 sub choose_encoding {
     my ($self, $provided, $header) = @_;
-    if ( my $encoding = $self->make_choice( $provided, $header, 'identity' ) ) {
-        return $encoding;
-    }
-    return;
+
+    return $self->_make_choice(
+        choices => $provided,
+        header  => $header,
+        class   => 'PriorityList',
+        default => 'identity',
+        matcher => \&_simple_match,
+    );
 }
 
-sub make_choice {
-    my ($self, $choices, $header, $default) = @_;
+sub _make_choice {
+    my $self = shift;
+    my %args = @_;
+
+    my ($choices, $header, $class, $default, $matcher)
+        = @args{qw( choices header class default matcher )};
 
     return if @$choices == 0;
     return if $header eq '';
 
-    $choices = [ map { lc $_ } @$choices ];
-
-    my $accepted         = blessed $header ? $header : $self->action_pack->create( 'PriorityList' => $header );
-    my $default_priority = $accepted->priority_of( $default );
+    my $accepted         = blessed $header ? $header : $self->action_pack->create( $class => $header );
     my $star_priority    = $accepted->priority_of( '*' );
 
-    my ($default_ok, $any_ok);
+    my @canonical = map {
+        my $c = $accepted->canonicalize_choice($_);
+        $c ? [ $_, $c ] : ()
+    } @$choices;
 
-    if ( not defined $default_priority ) {
-        if ( defined $star_priority && $star_priority == 0.0 ) {
+    my ($default_ok, $any_ok, $default_priority);
+
+    if ($default) {
+        $default = $accepted->canonicalize_choice($default);
+        $default_priority = $accepted->priority_of( $args{default} );
+
+        if ( not defined $default_priority ) {
+            if ( defined $star_priority && $star_priority == 0.0 ) {
+                $default_ok = 0;
+            }
+            else {
+                $default_ok = 1;
+            }
+        }
+        elsif ( $default_priority == 0.0 ) {
             $default_ok = 0;
         }
         else {
             $default_ok = 1;
         }
-    }
-    elsif ( $default_priority == 0.0 ) {
-        $default_ok = 0;
-    }
-    else {
-        $default_ok = 1;
     }
 
     if ( not defined $star_priority ) {
@@ -131,24 +130,41 @@ sub make_choice {
         $any_ok = 1;
     }
 
-    my $chosen = first {
-        my ($priority, $acceptable) = @$_;
-        if ( $priority == 0.0 ) {
-            $choices = [ grep { lc $acceptable ne $_ } @$choices ];
-        } else {
-            return $acceptable if grep { lc $acceptable eq $_ } @$choices;
-        }
-    } $accepted->iterable;
+    my $chosen;
+    for my $item ($accepted->iterable) {
+        my ($priority, $acceptable) = @$item;
 
-    return $chosen->[-1] if $chosen;
-    return $choices->[0] if $any_ok;
-    return $default      if $default_ok && grep { $default eq $_ } @$choices;
+        next if $priority == 0;
+
+        if (my $match = first { $matcher->( $acceptable, $_->[1] ) } @canonical) {
+            $chosen = $match->[0];
+            last;
+        }
+    }
+
+    return $chosen if $chosen;
+
+    if ($any_ok) {
+        my $match = first {
+            my $priority = $accepted->priority_of( $_->[1] );
+            return 1 unless defined $priority && $priority == 0;
+            return 0;
+        }
+        @canonical;
+
+        return $match->[0] if $match;
+    }
+
+    if ( $default && $default_ok ) {
+        my $match = first { $matcher->( $default, $_->[1] ) } @canonical;
+        my $priority = $accepted->priority_of( $_->[1] );
+        return $match->[0] unless defined $priority && $priority == 0;
+    }
+
     return;
 }
 
 ## ....
-
-sub _pair_key { ( keys   %{ $_[0] } )[0] }
 
 sub _media_match {
     my ($requested, $provided) = @_;
@@ -159,6 +175,10 @@ sub _media_match {
 sub _language_match {
     my ($range, $tag) = @_;
     ((lc $range) eq (lc $tag)) || $range eq "*" || $tag =~ /^$range\-/i;
+}
+
+sub _simple_match {
+    return $_[0] eq $_[1];
 }
 
 1;
@@ -173,7 +193,7 @@ HTTP::Headers::ActionPack::ContentNegotiation - A class to handle content negoti
 
 =head1 VERSION
 
-version 0.05
+version 0.06
 
 =head1 SYNOPSIS
 
@@ -225,7 +245,7 @@ documents in our test suite as well.
 =item C<choose_media_type ( $provided, $header )>
 
 Given an ARRAY ref of media type strings and an HTTP header, this will
-return the appropriatly matching L<HTTP::Headers::ActionPack::MediaType>
+return the appropriately matching L<HTTP::Headers::ActionPack::MediaType>
 instance.
 
 =item C<choose_language ( $provided, $header )>
@@ -252,13 +272,39 @@ which best matched.
 
 L<HTTP::Negotiate>
 
-There is nothing wrong with this module, however it attempt to answer all
-the negotiation quesitons at once, whereas this module allows you to do it
+There is nothing wrong with this module, however it attempts to answer all
+the negotiation questions at once, whereas this module allows you to do it
 one thing at a time.
 
 =head1 AUTHOR
 
 Stevan Little <stevan.little@iinteractive.com>
+
+=head1 CONTRIBUTORS
+
+=over 4
+
+=item *
+
+Andrew Nelson <anelson@cpan.org>
+
+=item *
+
+Dave Rolsky <autarch@urth.org>
+
+=item *
+
+Florian Ragwitz <rafl@debian.org>
+
+=item *
+
+Jesse Luehrs <doy@tozt.net>
+
+=item *
+
+Karen Etheridge <ether@cpan.org>
+
+=back
 
 =head1 COPYRIGHT AND LICENSE
 

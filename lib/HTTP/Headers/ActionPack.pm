@@ -3,7 +3,7 @@ BEGIN {
   $HTTP::Headers::ActionPack::AUTHORITY = 'cpan:STEVAN';
 }
 {
-  $HTTP::Headers::ActionPack::VERSION = '0.05';
+  $HTTP::Headers::ActionPack::VERSION = '0.06';
 }
 # ABSTRACT: HTTP Action, Adventure and Excitement
 
@@ -15,6 +15,8 @@ use Carp            qw[ confess ];
 use Module::Runtime qw[ use_module ];
 
 my @DEFAULT_CLASSES = qw[
+    HTTP::Headers::ActionPack::AcceptCharset
+    HTTP::Headers::ActionPack::AcceptLanguage
     HTTP::Headers::ActionPack::AuthenticationInfo
     HTTP::Headers::ActionPack::Authorization
     HTTP::Headers::ActionPack::Authorization::Basic
@@ -32,9 +34,9 @@ my %DEFAULT_MAPPINGS = (
     'link'                => 'HTTP::Headers::ActionPack::LinkList',
     'content-type'        => 'HTTP::Headers::ActionPack::MediaType',
     'accept'              => 'HTTP::Headers::ActionPack::MediaTypeList',
-    'accept-charset'      => 'HTTP::Headers::ActionPack::PriorityList',
+    'accept-charset'      => 'HTTP::Headers::ActionPack::AcceptCharset',
     'accept-encoding'     => 'HTTP::Headers::ActionPack::PriorityList',
-    'accept-language'     => 'HTTP::Headers::ActionPack::PriorityList',
+    'accept-language'     => 'HTTP::Headers::ActionPack::AcceptLanguage',
     'date'                => 'HTTP::Headers::ActionPack::DateHeader',
     'client-date'         => 'HTTP::Headers::ActionPack::DateHeader', # added by LWP
     'expires'             => 'HTTP::Headers::ActionPack::DateHeader',
@@ -102,9 +104,12 @@ sub create_header {
 
 sub inflate {
     my $self = shift;
-    return $self->_inflate_http_headers( @_ )  if $_[0]->isa('HTTP::Headers');
-    return $self->_inflate_http_request( @_ )  if $_[0]->isa('HTTP::Request');
-    return $self->_inflate_plack_request( @_ ) if $_[0]->isa('Plack::Request');
+    return $self->_inflate_http_headers( @_ )
+        if $_[0]->isa('HTTP::Headers');
+    return $self->_inflate_generic_request( @_ )
+        if $_[0]->isa('HTTP::Request')
+        || $_[0]->isa('Plack::Request')
+        || $_[0]->isa('Web::Request');
     confess "I don't know how to inflate '$_[0]'";
 }
 
@@ -119,16 +124,10 @@ sub _inflate_http_headers {
     return $http_headers;
 }
 
-sub _inflate_http_request {
-    my ($self, $http_request) = @_;
-    $self->_inflate_http_headers( $http_request->headers );
-    return $http_request;
-}
-
-sub _inflate_plack_request {
-    my ($self, $plack_request) = @_;
-    $self->_inflate_http_headers( $plack_request->headers );
-    return $plack_request;
+sub _inflate_generic_request {
+    my ($self, $request) = @_;
+    $self->_inflate_http_headers( $request->headers );
+    return $request;
 }
 
 1;
@@ -143,7 +142,7 @@ HTTP::Headers::ActionPack - HTTP Action, Adventure and Excitement
 
 =head1 VERSION
 
-version 0.05
+version 0.06
 
 =head1 SYNOPSIS
 
@@ -249,10 +248,12 @@ C<new>.
 
 =item C<inflate( $plack_request )>
 
+=item C<inflate( $web_request )>
+
 Given either a L<HTTP::Headers> instance, a L<HTTP::Request>
-instance or a L<Plack::Request> instance, this method will
-inflate all the relevant headers and store the object in the
-same instance.
+instance, a L<Plack::Request> instance, or a L<Web::Request>
+instance, this method will inflate all the relevant headers
+and store the object in the same instance.
 
 In theory this should not negatively affect anything since all
 the header objects overload the stringification operator, and
@@ -263,7 +264,7 @@ is not for certain and care should be taken.
 
 =head1 CAVEATS
 
-=head2 Plack Compatability
+=head2 Plack Compatibility
 
 We have a test in the suite that checks to make sure that
 any inflated header objects will pass between L<HTTP::Request>
@@ -295,6 +296,32 @@ object headers onto another library that is expecting strings.
 =head1 AUTHOR
 
 Stevan Little <stevan.little@iinteractive.com>
+
+=head1 CONTRIBUTORS
+
+=over 4
+
+=item *
+
+Andrew Nelson <anelson@cpan.org>
+
+=item *
+
+Dave Rolsky <autarch@urth.org>
+
+=item *
+
+Florian Ragwitz <rafl@debian.org>
+
+=item *
+
+Jesse Luehrs <doy@tozt.net>
+
+=item *
+
+Karen Etheridge <ether@cpan.org>
+
+=back
 
 =head1 COPYRIGHT AND LICENSE
 

@@ -3,7 +3,7 @@ BEGIN {
   $HTTP::Headers::ActionPack::LinkList::AUTHORITY = 'cpan:STEVAN';
 }
 {
-  $HTTP::Headers::ActionPack::LinkList::VERSION = '0.05';
+  $HTTP::Headers::ActionPack::LinkList::VERSION = '0.06';
 }
 # ABSTRACT: A List of Link objects
 
@@ -42,7 +42,7 @@ HTTP::Headers::ActionPack::LinkList - A List of Link objects
 
 =head1 VERSION
 
-version 0.05
+version 0.06
 
 =head1 SYNOPSIS
 
@@ -66,6 +66,32 @@ can legally have more then one link in it.
 =head1 AUTHOR
 
 Stevan Little <stevan.little@iinteractive.com>
+
+=head1 CONTRIBUTORS
+
+=over 4
+
+=item *
+
+Andrew Nelson <anelson@cpan.org>
+
+=item *
+
+Dave Rolsky <autarch@urth.org>
+
+=item *
+
+Florian Ragwitz <rafl@debian.org>
+
+=item *
+
+Jesse Luehrs <doy@tozt.net>
+
+=item *
+
+Karen Etheridge <ether@cpan.org>
+
+=back
 
 =head1 COPYRIGHT AND LICENSE
 

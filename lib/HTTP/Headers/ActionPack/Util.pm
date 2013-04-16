@@ -3,7 +3,7 @@ BEGIN {
   $HTTP::Headers::ActionPack::Util::AUTHORITY = 'cpan:STEVAN';
 }
 {
-  $HTTP::Headers::ActionPack::Util::VERSION = '0.05';
+  $HTTP::Headers::ActionPack::Util::VERSION = '0.06';
 }
 # ABSTRACT: General Utility module
 
@@ -65,7 +65,7 @@ HTTP::Headers::ActionPack::Util - General Utility module
 
 =head1 VERSION
 
-version 0.05
+version 0.06
 
 =head1 SYNOPSIS
 
@@ -74,7 +74,7 @@ version 0.05
 =head1 DESCRIPTION
 
 This is just a basic utility module used internally by
-L<HTTP::Headers::ActionPack>. There is no real user servicable parts
+L<HTTP::Headers::ActionPack>. There are no real user serviceable parts
 in here.
 
 =head1 FUNCTIONS
@@ -105,6 +105,32 @@ values appropriately.
 =head1 AUTHOR
 
 Stevan Little <stevan.little@iinteractive.com>
+
+=head1 CONTRIBUTORS
+
+=over 4
+
+=item *
+
+Andrew Nelson <anelson@cpan.org>
+
+=item *
+
+Dave Rolsky <autarch@urth.org>
+
+=item *
+
+Florian Ragwitz <rafl@debian.org>
+
+=item *
+
+Jesse Luehrs <doy@tozt.net>
+
+=item *
+
+Karen Etheridge <ether@cpan.org>
+
+=back
 
 =head1 COPYRIGHT AND LICENSE
 

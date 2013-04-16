@@ -3,12 +3,14 @@ BEGIN {
   $HTTP::Headers::ActionPack::MediaTypeList::AUTHORITY = 'cpan:STEVAN';
 }
 {
-  $HTTP::Headers::ActionPack::MediaTypeList::VERSION = '0.05';
+  $HTTP::Headers::ActionPack::MediaTypeList::VERSION = '0.06';
 }
 # ABSTRACT: A Priority List customized for Media Types
 
 use strict;
 use warnings;
+
+use Scalar::Util qw[ blessed ];
 
 use HTTP::Headers::ActionPack::MediaType;
 
@@ -71,6 +73,12 @@ sub iterable {
     } keys %{ $self->items };
 }
 
+sub canonicalize_choice {
+    return blessed $_[1]
+        ? $_[1]
+        : HTTP::Headers::ActionPack::MediaType->new( $_[1] );
+}
+
 1;
 
 __END__
@@ -83,7 +91,7 @@ HTTP::Headers::ActionPack::MediaTypeList - A Priority List customized for Media 
 
 =head1 VERSION
 
-version 0.05
+version 0.06
 
 =head1 SYNOPSIS
 
@@ -132,11 +140,43 @@ RFC-2616 Sec14.
   than one media range applies to a given type,
   the most specific reference has precedence.
 
+=item C<canonicalize_choice>
+
+If this is passed a string, it returns a new
+L<HTTP::Headers::ActionPack::MediaType> object from that string. If it
+receives an object it simply returns that object as is.
+
 =back
 
 =head1 AUTHOR
 
 Stevan Little <stevan.little@iinteractive.com>
+
+=head1 CONTRIBUTORS
+
+=over 4
+
+=item *
+
+Andrew Nelson <anelson@cpan.org>
+
+=item *
+
+Dave Rolsky <autarch@urth.org>
+
+=item *
+
+Florian Ragwitz <rafl@debian.org>
+
+=item *
+
+Jesse Luehrs <doy@tozt.net>
+
+=item *
+
+Karen Etheridge <ether@cpan.org>
+
+=back
 
 =head1 COPYRIGHT AND LICENSE
 

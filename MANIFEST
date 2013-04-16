@@ -1,12 +1,16 @@
 Changes
+INSTALL
 LICENSE
 MANIFEST
+META.json
 META.yml
 Makefile.PL
 README
 README.md
 dist.ini
 lib/HTTP/Headers/ActionPack.pm
+lib/HTTP/Headers/ActionPack/AcceptCharset.pm
+lib/HTTP/Headers/ActionPack/AcceptLanguage.pm
 lib/HTTP/Headers/ActionPack/AuthenticationInfo.pm
 lib/HTTP/Headers/ActionPack/Authorization.pm
 lib/HTTP/Headers/ActionPack/Authorization/Basic.pm
@@ -29,6 +33,7 @@ t/000-load.t
 t/001-basic.t
 t/002-http-headers-inflate.t
 t/003-create-header-auth.t
+t/004-inflate.t
 t/010-media-type.t
 t/020-priority-list.t
 t/030-media-type-list.t
@@ -47,4 +52,5 @@ t/300-content-negotiation-media-type.t
 t/301-content-negotiation-language.t
 t/302-content-negotiation-charset.t
 t/303-content-negotiation-encoding.t
+t/author-pod-spell.t
 weaver.ini

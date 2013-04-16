@@ -3,7 +3,7 @@ BEGIN {
   $HTTP::Headers::ActionPack::DateHeader::AUTHORITY = 'cpan:STEVAN';
 }
 {
-  $HTTP::Headers::ActionPack::DateHeader::VERSION = '0.05';
+  $HTTP::Headers::ActionPack::DateHeader::VERSION = '0.06';
 }
 # ABSTRACT: A Date Header
 
@@ -57,7 +57,7 @@ HTTP::Headers::ActionPack::DateHeader - A Date Header
 
 =head1 VERSION
 
-version 0.05
+version 0.06
 
 =head1 SYNOPSIS
 
@@ -79,7 +79,7 @@ This is an object which represents an HTTP header with a date.
 It will inflate the header value into a L<Time::Piece> object
 and proxy most of the relevant methods.
 
-=head1 DateTime compat
+=head1 DateTime compatibility
 
 I opted to not use L<DateTime> (by default) for this class since
 it is not a core module and can be a memory hog at times. That said,
@@ -135,6 +135,32 @@ These delegate to the underlying L<Time::Piece> object.
 =head1 AUTHOR
 
 Stevan Little <stevan.little@iinteractive.com>
+
+=head1 CONTRIBUTORS
+
+=over 4
+
+=item *
+
+Andrew Nelson <anelson@cpan.org>
+
+=item *
+
+Dave Rolsky <autarch@urth.org>
+
+=item *
+
+Florian Ragwitz <rafl@debian.org>
+
+=item *
+
+Jesse Luehrs <doy@tozt.net>
+
+=item *
+
+Karen Etheridge <ether@cpan.org>
+
+=back
 
 =head1 COPYRIGHT AND LICENSE
 

@@ -3,7 +3,7 @@ BEGIN {
   $HTTP::Headers::ActionPack::Authorization::Digest::AUTHORITY = 'cpan:STEVAN';
 }
 {
-  $HTTP::Headers::ActionPack::Authorization::Digest::VERSION = '0.05';
+  $HTTP::Headers::ActionPack::Authorization::Digest::VERSION = '0.06';
 }
 # ABSTRACT: The Digest Authorization Header
 
@@ -27,7 +27,7 @@ HTTP::Headers::ActionPack::Authorization::Digest - The Digest Authorization Head
 
 =head1 VERSION
 
-version 0.05
+version 0.06
 
 =head1 SYNOPSIS
 
@@ -87,6 +87,32 @@ L<HTTP::Headers::ActionPack::Core::BaseAuthHeader>
 =head1 AUTHOR
 
 Stevan Little <stevan.little@iinteractive.com>
+
+=head1 CONTRIBUTORS
+
+=over 4
+
+=item *
+
+Andrew Nelson <anelson@cpan.org>
+
+=item *
+
+Dave Rolsky <autarch@urth.org>
+
+=item *
+
+Florian Ragwitz <rafl@debian.org>
+
+=item *
+
+Jesse Luehrs <doy@tozt.net>
+
+=item *
+
+Karen Etheridge <ether@cpan.org>
+
+=back
 
 =head1 COPYRIGHT AND LICENSE
 

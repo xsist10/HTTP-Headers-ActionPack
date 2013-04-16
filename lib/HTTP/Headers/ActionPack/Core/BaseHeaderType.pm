@@ -3,7 +3,7 @@ BEGIN {
   $HTTP::Headers::ActionPack::Core::BaseHeaderType::AUTHORITY = 'cpan:STEVAN';
 }
 {
-  $HTTP::Headers::ActionPack::Core::BaseHeaderType::VERSION = '0.05';
+  $HTTP::Headers::ActionPack::Core::BaseHeaderType::VERSION = '0.06';
 }
 # ABSTRACT: A Base header type
 
@@ -55,7 +55,7 @@ HTTP::Headers::ActionPack::Core::BaseHeaderType - A Base header type
 
 =head1 VERSION
 
-version 0.05
+version 0.06
 
 =head1 SYNOPSIS
 
@@ -64,7 +64,7 @@ version 0.05
 =head1 DESCRIPTION
 
 This is a base class for header values which also contain
-a parameter list. There is no real user servicable parts
+a parameter list. There are no real user serviceable parts
 in here.
 
 =head1 METHODS
@@ -82,8 +82,8 @@ and parse it into and object.
 
 =item C<as_string>
 
-This stringifys the link respecting the
-parameter order.
+This stringifies the link
+respecting the parameter order.
 
 NOTE: This will canonicalize the header such
 that it will add a space between each semicolon
@@ -94,6 +94,32 @@ and quotes and unquotes all headers appropriately.
 =head1 AUTHOR
 
 Stevan Little <stevan.little@iinteractive.com>
+
+=head1 CONTRIBUTORS
+
+=over 4
+
+=item *
+
+Andrew Nelson <anelson@cpan.org>
+
+=item *
+
+Dave Rolsky <autarch@urth.org>
+
+=item *
+
+Florian Ragwitz <rafl@debian.org>
+
+=item *
+
+Jesse Luehrs <doy@tozt.net>
+
+=item *
+
+Karen Etheridge <ether@cpan.org>
+
+=back
 
 =head1 COPYRIGHT AND LICENSE
 

@@ -11,13 +11,7 @@ use ExtUtils::MakeMaker 6.30;
 my %WriteMakefileArgs = (
   "ABSTRACT" => "HTTP Action, Adventure and Excitement",
   "AUTHOR" => "Stevan Little <stevan.little\@iinteractive.com>",
-  "BUILD_REQUIRES" => {
-    "HTTP::Headers" => 0,
-    "HTTP::Request" => 0,
-    "HTTP::Response" => 0,
-    "Test::Fatal" => "0.003",
-    "Test::More" => "0.88"
-  },
+  "BUILD_REQUIRES" => {},
   "CONFIGURE_REQUIRES" => {
     "ExtUtils::MakeMaker" => "6.30"
   },
@@ -27,28 +21,47 @@ my %WriteMakefileArgs = (
   "NAME" => "HTTP::Headers::ActionPack",
   "PREREQ_PM" => {
     "Carp" => 0,
+    "Encode" => 0,
     "HTTP::Date" => 0,
     "HTTP::Headers::Util" => 0,
-    "HTTP::Message" => 0,
     "List::Util" => 0,
     "MIME::Base64" => 0,
     "Module::Runtime" => 0,
     "Scalar::Util" => 0,
     "Sub::Exporter" => 0,
     "Time::Piece" => 0,
-    "URI" => 0,
     "URI::Escape" => 0,
     "overload" => 0,
     "parent" => 0,
     "strict" => 0,
     "warnings" => 0
   },
-  "VERSION" => "0.05",
+  "TEST_REQUIRES" => {
+    "HTTP::Headers" => 0,
+    "HTTP::Request" => 0,
+    "HTTP::Response" => 0,
+    "Test::Fatal" => "0.0003",
+    "Test::More" => "0.88"
+  },
+  "VERSION" => "0.06",
   "test" => {
     "TESTS" => "t/*.t"
   }
 );
 
+
+unless ( eval { ExtUtils::MakeMaker->VERSION(6.63_03) } ) {
+  my $tr = delete $WriteMakefileArgs{TEST_REQUIRES};
+  my $br = $WriteMakefileArgs{BUILD_REQUIRES};
+  for my $mod ( keys %$tr ) {
+    if ( exists $br->{$mod} ) {
+      $br->{$mod} = $tr->{$mod} if $tr->{$mod} > $br->{$mod};
+    }
+    else {
+      $br->{$mod} = $tr->{$mod};
+    }
+  }
+}
 
 unless ( eval { ExtUtils::MakeMaker->VERSION(6.56) } ) {
   my $br = delete $WriteMakefileArgs{BUILD_REQUIRES};

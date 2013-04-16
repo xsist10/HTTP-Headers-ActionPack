@@ -3,7 +3,7 @@ BEGIN {
   $HTTP::Headers::ActionPack::MediaType::AUTHORITY = 'cpan:STEVAN';
 }
 {
-  $HTTP::Headers::ActionPack::MediaType::VERSION = '0.05';
+  $HTTP::Headers::ActionPack::MediaType::VERSION = '0.06';
 }
 # ABSTRACT: A Media Type
 
@@ -102,7 +102,7 @@ HTTP::Headers::ActionPack::MediaType - A Media Type
 
 =head1 VERSION
 
-version 0.05
+version 0.06
 
 =head1 SYNOPSIS
 
@@ -124,7 +124,7 @@ version 0.05
 =head1 DESCRIPTION
 
 This is an object which represents an HTTP media type
-defintion. This is most often found as a member of a
+definition. This is most often found as a member of a
 L<HTTP::Headers::ActionPack::MediaTypeList> object.
 
 =head1 METHODS
@@ -179,7 +179,7 @@ be compatible and the parameters must be a subset.
 
 =item C<type_matches ( $media_type | $media_type_string )>
 
-This will determine type compatability, properly handling
+This will determine type compatibility, properly handling
 the C<*> types and major and minor elements of the type.
 
 =item C<params_match ( $parameters )>
@@ -192,6 +192,32 @@ invocants parameters.
 =head1 AUTHOR
 
 Stevan Little <stevan.little@iinteractive.com>
+
+=head1 CONTRIBUTORS
+
+=over 4
+
+=item *
+
+Andrew Nelson <anelson@cpan.org>
+
+=item *
+
+Dave Rolsky <autarch@urth.org>
+
+=item *
+
+Florian Ragwitz <rafl@debian.org>
+
+=item *
+
+Jesse Luehrs <doy@tozt.net>
+
+=item *
+
+Karen Etheridge <ether@cpan.org>
+
+=back
 
 =head1 COPYRIGHT AND LICENSE
 

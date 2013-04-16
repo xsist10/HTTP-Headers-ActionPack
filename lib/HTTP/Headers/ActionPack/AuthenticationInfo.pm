@@ -3,7 +3,7 @@ BEGIN {
   $HTTP::Headers::ActionPack::AuthenticationInfo::AUTHORITY = 'cpan:STEVAN';
 }
 {
-  $HTTP::Headers::ActionPack::AuthenticationInfo::VERSION = '0.05';
+  $HTTP::Headers::ActionPack::AuthenticationInfo::VERSION = '0.06';
 }
 # ABSTRACT: The Authentication-Info Header
 
@@ -44,7 +44,7 @@ HTTP::Headers::ActionPack::AuthenticationInfo - The Authentication-Info Header
 
 =head1 VERSION
 
-version 0.05
+version 0.06
 
 =head1 SYNOPSIS
 
@@ -67,7 +67,7 @@ version 0.05
 
 This class represents the Authentication-Info header, it is a pretty parameter
 based header and so inherits from L<HTTP::Headers::ActionPack::Core::BaseHeaderWithParams>
-to handle all the params.
+to handle all the parameters.
 
 =head1 METHODS
 
@@ -84,6 +84,32 @@ to handle all the params.
 =head1 AUTHOR
 
 Stevan Little <stevan.little@iinteractive.com>
+
+=head1 CONTRIBUTORS
+
+=over 4
+
+=item *
+
+Andrew Nelson <anelson@cpan.org>
+
+=item *
+
+Dave Rolsky <autarch@urth.org>
+
+=item *
+
+Florian Ragwitz <rafl@debian.org>
+
+=item *
+
+Jesse Luehrs <doy@tozt.net>
+
+=item *
+
+Karen Etheridge <ether@cpan.org>
+
+=back
 
 =head1 COPYRIGHT AND LICENSE
 

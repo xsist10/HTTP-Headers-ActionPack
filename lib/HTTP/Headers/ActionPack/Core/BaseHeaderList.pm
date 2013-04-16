@@ -3,7 +3,7 @@ BEGIN {
   $HTTP::Headers::ActionPack::Core::BaseHeaderList::AUTHORITY = 'cpan:STEVAN';
 }
 {
-  $HTTP::Headers::ActionPack::Core::BaseHeaderList::VERSION = '0.05';
+  $HTTP::Headers::ActionPack::Core::BaseHeaderList::VERSION = '0.06';
 }
 # ABSTRACT: A Base Header List
 
@@ -45,7 +45,7 @@ HTTP::Headers::ActionPack::Core::BaseHeaderList - A Base Header List
 
 =head1 VERSION
 
-version 0.05
+version 0.06
 
 =head1 SYNOPSIS
 
@@ -53,8 +53,8 @@ version 0.05
 
 =head1 DESCRIPTION
 
-This is a base class for header lists. There is no real
-user servicable parts in here.
+This is a base class for header lists. There are no real
+user serviceable parts in here.
 
 =head1 METHODS
 
@@ -82,6 +82,32 @@ and loaded accordingly.
 =head1 AUTHOR
 
 Stevan Little <stevan.little@iinteractive.com>
+
+=head1 CONTRIBUTORS
+
+=over 4
+
+=item *
+
+Andrew Nelson <anelson@cpan.org>
+
+=item *
+
+Dave Rolsky <autarch@urth.org>
+
+=item *
+
+Florian Ragwitz <rafl@debian.org>
+
+=item *
+
+Jesse Luehrs <doy@tozt.net>
+
+=item *
+
+Karen Etheridge <ether@cpan.org>
+
+=back
 
 =head1 COPYRIGHT AND LICENSE
 

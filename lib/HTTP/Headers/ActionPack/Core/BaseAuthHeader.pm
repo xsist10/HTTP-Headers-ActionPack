@@ -3,7 +3,7 @@ BEGIN {
   $HTTP::Headers::ActionPack::Core::BaseAuthHeader::AUTHORITY = 'cpan:STEVAN';
 }
 {
-  $HTTP::Headers::ActionPack::Core::BaseAuthHeader::VERSION = '0.05';
+  $HTTP::Headers::ActionPack::Core::BaseAuthHeader::VERSION = '0.06';
 }
 # ABSTRACT: The base Auth Header
 
@@ -57,7 +57,7 @@ HTTP::Headers::ActionPack::Core::BaseAuthHeader - The base Auth Header
 
 =head1 VERSION
 
-version 0.05
+version 0.06
 
 =head1 SYNOPSIS
 
@@ -65,7 +65,7 @@ version 0.05
 
 =head1 DESCRIPTION
 
-This is a base class for Auth style headers, it inherits
+This is a base class for Auth-style headers; it inherits
 from L<HTTP::Headers::ActionPack::Core::BaseHeaderWithParams>.
 
 =head1 METHODS
@@ -85,6 +85,32 @@ from L<HTTP::Headers::ActionPack::Core::BaseHeaderWithParams>.
 =head1 AUTHOR
 
 Stevan Little <stevan.little@iinteractive.com>
+
+=head1 CONTRIBUTORS
+
+=over 4
+
+=item *
+
+Andrew Nelson <anelson@cpan.org>
+
+=item *
+
+Dave Rolsky <autarch@urth.org>
+
+=item *
+
+Florian Ragwitz <rafl@debian.org>
+
+=item *
+
+Jesse Luehrs <doy@tozt.net>
+
+=item *
+
+Karen Etheridge <ether@cpan.org>
+
+=back
 
 =head1 COPYRIGHT AND LICENSE
 

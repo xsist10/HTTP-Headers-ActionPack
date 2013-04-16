@@ -3,7 +3,7 @@ BEGIN {
   $HTTP::Headers::ActionPack::PriorityList::AUTHORITY = 'cpan:STEVAN';
 }
 {
-  $HTTP::Headers::ActionPack::PriorityList::VERSION = '0.05';
+  $HTTP::Headers::ActionPack::PriorityList::VERSION = '0.06';
 }
 # ABSTRACT: A Priority List
 
@@ -48,6 +48,10 @@ sub as_string {
 
 sub add {
     my ($self, $q, $choice) = @_;
+    # XXX - should failure to canonicalize be an error? or should
+    # canonicalize_choice itself throw an error on bad values?
+    $choice = $self->canonicalize_choice($choice)
+        or return;
     $q += 0; # be sure to numify this
     $self->index->{ $choice } = $q;
     $self->items->{ $q } = [] unless exists $self->items->{ $q };
@@ -67,6 +71,8 @@ sub get {
 
 sub priority_of {
     my ($self, $choice) = @_;
+    $choice = $self->canonicalize_choice($choice)
+        or return;
     $self->index->{ $choice };
 }
 
@@ -76,6 +82,10 @@ sub iterable {
         my $q = $_;
         map { [ $q, $_ ] } @{ $self->items->{ $q } }
     } reverse sort keys %{ $self->items };
+}
+
+sub canonicalize_choice {
+    return $_[1];
 }
 
 1;
@@ -90,7 +100,7 @@ HTTP::Headers::ActionPack::PriorityList - A Priority List
 
 =head1 VERSION
 
-version 0.05
+version 0.06
 
 =head1 SYNOPSIS
 
@@ -147,11 +157,44 @@ This returns a list of two item ARRAY refs with the
 quality as the first item and the associated choice
 as the second item. These are sorted accordingly.
 
+When two items have the same priority, they are returned
+in the order that they were found in the header.
+
+=item C<canonicalize_choice>
+
+By default, this does nothing. It exists so that subclasses can override it.
+
 =back
 
 =head1 AUTHOR
 
 Stevan Little <stevan.little@iinteractive.com>
+
+=head1 CONTRIBUTORS
+
+=over 4
+
+=item *
+
+Andrew Nelson <anelson@cpan.org>
+
+=item *
+
+Dave Rolsky <autarch@urth.org>
+
+=item *
+
+Florian Ragwitz <rafl@debian.org>
+
+=item *
+
+Jesse Luehrs <doy@tozt.net>
+
+=item *
+
+Karen Etheridge <ether@cpan.org>
+
+=back
 
 =head1 COPYRIGHT AND LICENSE
 

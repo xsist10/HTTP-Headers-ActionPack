@@ -3,7 +3,7 @@ BEGIN {
   $HTTP::Headers::ActionPack::LinkHeader::AUTHORITY = 'cpan:STEVAN';
 }
 {
-  $HTTP::Headers::ActionPack::LinkHeader::VERSION = '0.05';
+  $HTTP::Headers::ActionPack::LinkHeader::VERSION = '0.06';
 }
 # ABSTRACT: A Link
 
@@ -95,7 +95,7 @@ HTTP::Headers::ActionPack::LinkHeader - A Link
 
 =head1 VERSION
 
-version 0.05
+version 0.06
 
 =head1 SYNOPSIS
 
@@ -141,7 +141,7 @@ and parse it into and object.
 
 =item C<as_string>
 
-This stringifys the link respecting the
+This stringifies the link respecting the
 parameter order.
 
 NOTE: This will canonicalize the header such
@@ -153,6 +153,32 @@ and quotes and unquotes all headers appropriately.
 =head1 AUTHOR
 
 Stevan Little <stevan.little@iinteractive.com>
+
+=head1 CONTRIBUTORS
+
+=over 4
+
+=item *
+
+Andrew Nelson <anelson@cpan.org>
+
+=item *
+
+Dave Rolsky <autarch@urth.org>
+
+=item *
+
+Florian Ragwitz <rafl@debian.org>
+
+=item *
+
+Jesse Luehrs <doy@tozt.net>
+
+=item *
+
+Karen Etheridge <ether@cpan.org>
+
+=back
 
 =head1 COPYRIGHT AND LICENSE
 
