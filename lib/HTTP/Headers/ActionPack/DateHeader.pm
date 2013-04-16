@@ -3,7 +3,7 @@ BEGIN {
   $HTTP::Headers::ActionPack::DateHeader::AUTHORITY = 'cpan:STEVAN';
 }
 {
-  $HTTP::Headers::ActionPack::DateHeader::VERSION = '0.06';
+  $HTTP::Headers::ActionPack::DateHeader::VERSION = '0.07';
 }
 # ABSTRACT: A Date Header
 
@@ -57,7 +57,7 @@ HTTP::Headers::ActionPack::DateHeader - A Date Header
 
 =head1 VERSION
 
-version 0.06
+version 0.07
 
 =head1 SYNOPSIS
 

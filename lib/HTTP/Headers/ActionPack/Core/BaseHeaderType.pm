@@ -3,7 +3,7 @@ BEGIN {
   $HTTP::Headers::ActionPack::Core::BaseHeaderType::AUTHORITY = 'cpan:STEVAN';
 }
 {
-  $HTTP::Headers::ActionPack::Core::BaseHeaderType::VERSION = '0.06';
+  $HTTP::Headers::ActionPack::Core::BaseHeaderType::VERSION = '0.07';
 }
 # ABSTRACT: A Base header type
 
@@ -55,7 +55,7 @@ HTTP::Headers::ActionPack::Core::BaseHeaderType - A Base header type
 
 =head1 VERSION
 
-version 0.06
+version 0.07
 
 =head1 SYNOPSIS
 

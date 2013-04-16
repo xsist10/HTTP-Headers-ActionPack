@@ -3,7 +3,7 @@ BEGIN {
   $HTTP::Headers::ActionPack::Authorization::Digest::AUTHORITY = 'cpan:STEVAN';
 }
 {
-  $HTTP::Headers::ActionPack::Authorization::Digest::VERSION = '0.06';
+  $HTTP::Headers::ActionPack::Authorization::Digest::VERSION = '0.07';
 }
 # ABSTRACT: The Digest Authorization Header
 
@@ -27,7 +27,7 @@ HTTP::Headers::ActionPack::Authorization::Digest - The Digest Authorization Head
 
 =head1 VERSION
 
-version 0.06
+version 0.07
 
 =head1 SYNOPSIS
 

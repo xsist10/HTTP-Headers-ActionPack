@@ -3,7 +3,7 @@ BEGIN {
   $HTTP::Headers::ActionPack::PriorityList::AUTHORITY = 'cpan:STEVAN';
 }
 {
-  $HTTP::Headers::ActionPack::PriorityList::VERSION = '0.06';
+  $HTTP::Headers::ActionPack::PriorityList::VERSION = '0.07';
 }
 # ABSTRACT: A Priority List
 
@@ -61,7 +61,7 @@ sub add {
 sub add_header_value {
     my $self = shift;
     my ($choice, %params) = @{ $_[0] };
-    $self->add( $params{'q'} || 1.0, $choice );
+    $self->add( exists $params{'q'} ? $params{'q'} : 1.0, $choice );
 }
 
 sub get {
@@ -100,7 +100,7 @@ HTTP::Headers::ActionPack::PriorityList - A Priority List
 
 =head1 VERSION
 
-version 0.06
+version 0.07
 
 =head1 SYNOPSIS
 

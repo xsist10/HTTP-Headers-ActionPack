@@ -36,7 +36,7 @@ requires:
 resources:
   bugtracker: https://rt.cpan.org/Dist/Display.html?Name=HTTP::Headers::ActionPack
   repository: https://github.com/stevan/http-headers-actionpack.git
-version: 0.06
+version: 0.07
 x_authority: cpan:STEVAN
 x_contributors:
   - 'Andrew Nelson <anelson@cpan.org>'

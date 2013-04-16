@@ -3,7 +3,7 @@ BEGIN {
   $HTTP::Headers::ActionPack::LinkHeader::AUTHORITY = 'cpan:STEVAN';
 }
 {
-  $HTTP::Headers::ActionPack::LinkHeader::VERSION = '0.06';
+  $HTTP::Headers::ActionPack::LinkHeader::VERSION = '0.07';
 }
 # ABSTRACT: A Link
 
@@ -95,7 +95,7 @@ HTTP::Headers::ActionPack::LinkHeader - A Link
 
 =head1 VERSION
 
-version 0.06
+version 0.07
 
 =head1 SYNOPSIS
 

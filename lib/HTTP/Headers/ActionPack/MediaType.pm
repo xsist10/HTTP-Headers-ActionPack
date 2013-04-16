@@ -3,7 +3,7 @@ BEGIN {
   $HTTP::Headers::ActionPack::MediaType::AUTHORITY = 'cpan:STEVAN';
 }
 {
-  $HTTP::Headers::ActionPack::MediaType::VERSION = '0.06';
+  $HTTP::Headers::ActionPack::MediaType::VERSION = '0.07';
 }
 # ABSTRACT: A Media Type
 
@@ -102,7 +102,7 @@ HTTP::Headers::ActionPack::MediaType - A Media Type
 
 =head1 VERSION
 
-version 0.06
+version 0.07
 
 =head1 SYNOPSIS
 

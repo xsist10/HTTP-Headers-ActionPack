@@ -3,7 +3,7 @@ BEGIN {
   $HTTP::Headers::ActionPack::AuthenticationInfo::AUTHORITY = 'cpan:STEVAN';
 }
 {
-  $HTTP::Headers::ActionPack::AuthenticationInfo::VERSION = '0.06';
+  $HTTP::Headers::ActionPack::AuthenticationInfo::VERSION = '0.07';
 }
 # ABSTRACT: The Authentication-Info Header
 
@@ -44,7 +44,7 @@ HTTP::Headers::ActionPack::AuthenticationInfo - The Authentication-Info Header
 
 =head1 VERSION
 
-version 0.06
+version 0.07
 
 =head1 SYNOPSIS
 
