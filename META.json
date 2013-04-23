@@ -4,7 +4,7 @@
       "Stevan Little <stevan.little@iinteractive.com>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Dist::Zilla version 4.300033, CPAN::Meta::Converter version 2.120921",
+   "generated_by" : "Dist::Zilla version 4.300034, CPAN::Meta::Converter version 2.120921",
    "license" : [
       "perl_5"
    ],
@@ -60,7 +60,7 @@
          "web" : "https://github.com/stevan/http-headers-actionpack"
       }
    },
-   "version" : "0.07",
+   "version" : "0.08",
    "x_authority" : "cpan:STEVAN",
    "x_contributors" : [
       "Andrew Nelson <anelson@cpan.org>",

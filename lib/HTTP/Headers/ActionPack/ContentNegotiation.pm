@@ -3,7 +3,7 @@ BEGIN {
   $HTTP::Headers::ActionPack::ContentNegotiation::AUTHORITY = 'cpan:STEVAN';
 }
 {
-  $HTTP::Headers::ActionPack::ContentNegotiation::VERSION = '0.07';
+  $HTTP::Headers::ActionPack::ContentNegotiation::VERSION = '0.08';
 }
 # ABSTRACT: A class to handle content negotiation
 
@@ -98,11 +98,11 @@ sub _make_choice {
         $c ? [ $_, $c ] : ()
     } @$choices;
 
-    my ($default_ok, $any_ok, $default_priority);
+    my ($default_ok, $any_ok);
 
     if ($default) {
         $default = $accepted->canonicalize_choice($default);
-        $default_priority = $accepted->priority_of( $args{default} );
+        my $default_priority = $accepted->priority_of( $args{default} );
 
         if ( not defined $default_priority ) {
             if ( defined $star_priority && $star_priority == 0.0 ) {
@@ -157,8 +157,10 @@ sub _make_choice {
 
     if ( $default && $default_ok ) {
         my $match = first { $matcher->( $default, $_->[1] ) } @canonical;
-        my $priority = $accepted->priority_of( $_->[1] );
-        return $match->[0] unless defined $priority && $priority == 0;
+        if ($match) {
+            my $priority = $accepted->priority_of( $match->[1] );
+            return $match->[0] unless defined $priority && $priority == 0;
+        }
     }
 
     return;
@@ -193,7 +195,7 @@ HTTP::Headers::ActionPack::ContentNegotiation - A class to handle content negoti
 
 =head1 VERSION
 
-version 0.07
+version 0.08
 
 =head1 SYNOPSIS
 

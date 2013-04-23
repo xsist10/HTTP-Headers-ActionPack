@@ -3,7 +3,7 @@ BEGIN {
   $HTTP::Headers::ActionPack::AUTHORITY = 'cpan:STEVAN';
 }
 {
-  $HTTP::Headers::ActionPack::VERSION = '0.07';
+  $HTTP::Headers::ActionPack::VERSION = '0.08';
 }
 # ABSTRACT: HTTP Action, Adventure and Excitement
 
@@ -142,7 +142,7 @@ HTTP::Headers::ActionPack - HTTP Action, Adventure and Excitement
 
 =head1 VERSION
 
-version 0.07
+version 0.08
 
 =head1 SYNOPSIS
 

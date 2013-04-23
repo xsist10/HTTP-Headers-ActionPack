@@ -3,7 +3,7 @@ BEGIN {
   $HTTP::Headers::ActionPack::MediaTypeList::AUTHORITY = 'cpan:STEVAN';
 }
 {
-  $HTTP::Headers::ActionPack::MediaTypeList::VERSION = '0.07';
+  $HTTP::Headers::ActionPack::MediaTypeList::VERSION = '0.08';
 }
 # ABSTRACT: A Priority List customized for Media Types
 
@@ -91,7 +91,7 @@ HTTP::Headers::ActionPack::MediaTypeList - A Priority List customized for Media 
 
 =head1 VERSION
 
-version 0.07
+version 0.08
 
 =head1 SYNOPSIS
 

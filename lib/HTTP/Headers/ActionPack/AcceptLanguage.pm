@@ -3,7 +3,7 @@ BEGIN {
   $HTTP::Headers::ActionPack::AcceptLanguage::AUTHORITY = 'cpan:STEVAN';
 }
 {
-  $HTTP::Headers::ActionPack::AcceptLanguage::VERSION = '0.07';
+  $HTTP::Headers::ActionPack::AcceptLanguage::VERSION = '0.08';
 }
 # ABSTRACT: A Priority List customized for Media Types
 
@@ -41,7 +41,7 @@ HTTP::Headers::ActionPack::AcceptLanguage - A Priority List customized for Media
 
 =head1 VERSION
 
-version 0.07
+version 0.08
 
 =head1 SYNOPSIS
 

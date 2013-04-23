@@ -3,7 +3,7 @@ BEGIN {
   $HTTP::Headers::ActionPack::PriorityList::AUTHORITY = 'cpan:STEVAN';
 }
 {
-  $HTTP::Headers::ActionPack::PriorityList::VERSION = '0.07';
+  $HTTP::Headers::ActionPack::PriorityList::VERSION = '0.08';
 }
 # ABSTRACT: A Priority List
 
@@ -100,7 +100,7 @@ HTTP::Headers::ActionPack::PriorityList - A Priority List
 
 =head1 VERSION
 
-version 0.07
+version 0.08
 
 =head1 SYNOPSIS
 

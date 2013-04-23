@@ -3,7 +3,7 @@ BEGIN {
   $HTTP::Headers::ActionPack::WWWAuthenticate::AUTHORITY = 'cpan:STEVAN';
 }
 {
-  $HTTP::Headers::ActionPack::WWWAuthenticate::VERSION = '0.07';
+  $HTTP::Headers::ActionPack::WWWAuthenticate::VERSION = '0.08';
 }
 # ABSTRACT: The WWW-Authenticate Header
 
@@ -26,7 +26,7 @@ HTTP::Headers::ActionPack::WWWAuthenticate - The WWW-Authenticate Header
 
 =head1 VERSION
 
-version 0.07
+version 0.08
 
 =head1 SYNOPSIS
 

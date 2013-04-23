@@ -3,7 +3,7 @@ BEGIN {
   $HTTP::Headers::ActionPack::Util::AUTHORITY = 'cpan:STEVAN';
 }
 {
-  $HTTP::Headers::ActionPack::Util::VERSION = '0.07';
+  $HTTP::Headers::ActionPack::Util::VERSION = '0.08';
 }
 # ABSTRACT: General Utility module
 
@@ -65,7 +65,7 @@ HTTP::Headers::ActionPack::Util - General Utility module
 
 =head1 VERSION
 
-version 0.07
+version 0.08
 
 =head1 SYNOPSIS
 
