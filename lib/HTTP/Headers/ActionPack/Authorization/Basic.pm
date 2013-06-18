@@ -3,7 +3,7 @@ BEGIN {
   $HTTP::Headers::ActionPack::Authorization::Basic::AUTHORITY = 'cpan:STEVAN';
 }
 {
-  $HTTP::Headers::ActionPack::Authorization::Basic::VERSION = '0.08';
+  $HTTP::Headers::ActionPack::Authorization::Basic::VERSION = '0.09';
 }
 # ABSTRACT: The Basic Authorization Header
 
@@ -62,7 +62,7 @@ HTTP::Headers::ActionPack::Authorization::Basic - The Basic Authorization Header
 
 =head1 VERSION
 
-version 0.08
+version 0.09
 
 =head1 SYNOPSIS
 

@@ -3,7 +3,7 @@ BEGIN {
   $HTTP::Headers::ActionPack::MediaType::AUTHORITY = 'cpan:STEVAN';
 }
 {
-  $HTTP::Headers::ActionPack::MediaType::VERSION = '0.08';
+  $HTTP::Headers::ActionPack::MediaType::VERSION = '0.09';
 }
 # ABSTRACT: A Media Type
 
@@ -11,11 +11,6 @@ use strict;
 use warnings;
 
 use Scalar::Util qw[ blessed ];
-
-use HTTP::Headers::ActionPack::Util qw[
-    split_header_words
-    join_header_words
-];
 
 use parent 'HTTP::Headers::ActionPack::Core::BaseHeaderType';
 
@@ -102,7 +97,7 @@ HTTP::Headers::ActionPack::MediaType - A Media Type
 
 =head1 VERSION
 
-version 0.08
+version 0.09
 
 =head1 SYNOPSIS
 

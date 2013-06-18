@@ -3,7 +3,7 @@ BEGIN {
   $HTTP::Headers::ActionPack::AcceptCharset::AUTHORITY = 'cpan:STEVAN';
 }
 {
-  $HTTP::Headers::ActionPack::AcceptCharset::VERSION = '0.08';
+  $HTTP::Headers::ActionPack::AcceptCharset::VERSION = '0.09';
 }
 # ABSTRACT: A Priority List customized for Media Types
 
@@ -51,7 +51,7 @@ HTTP::Headers::ActionPack::AcceptCharset - A Priority List customized for Media 
 
 =head1 VERSION
 
-version 0.08
+version 0.09
 
 =head1 SYNOPSIS
 

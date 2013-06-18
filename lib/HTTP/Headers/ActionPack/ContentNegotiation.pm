@@ -3,7 +3,7 @@ BEGIN {
   $HTTP::Headers::ActionPack::ContentNegotiation::AUTHORITY = 'cpan:STEVAN';
 }
 {
-  $HTTP::Headers::ActionPack::ContentNegotiation::VERSION = '0.08';
+  $HTTP::Headers::ActionPack::ContentNegotiation::VERSION = '0.09';
 }
 # ABSTRACT: A class to handle content negotiation
 
@@ -195,7 +195,7 @@ HTTP::Headers::ActionPack::ContentNegotiation - A class to handle content negoti
 
 =head1 VERSION
 
-version 0.08
+version 0.09
 
 =head1 SYNOPSIS
 
@@ -270,7 +270,7 @@ which best matched.
 
 =back
 
-=head SEE ALSO
+=head1 SEE ALSO
 
 L<HTTP::Negotiate>
 

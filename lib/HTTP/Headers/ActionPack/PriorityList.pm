@@ -3,7 +3,7 @@ BEGIN {
   $HTTP::Headers::ActionPack::PriorityList::AUTHORITY = 'cpan:STEVAN';
 }
 {
-  $HTTP::Headers::ActionPack::PriorityList::VERSION = '0.08';
+  $HTTP::Headers::ActionPack::PriorityList::VERSION = '0.09';
 }
 # ABSTRACT: A Priority List
 
@@ -100,7 +100,7 @@ HTTP::Headers::ActionPack::PriorityList - A Priority List
 
 =head1 VERSION
 
-version 0.08
+version 0.09
 
 =head1 SYNOPSIS
 
@@ -121,10 +121,12 @@ version 0.08
 =head1 DESCRIPTION
 
 This is a simple priority list implementation, this is used to
-handle the L<Accept-*> headers as they typically will contain
+handle the Accept-* headers as they typically will contain
 values along with a "q" value to indicate quality.
 
 =head1 METHODS
+
+=over 4
 
 =item C<new>
 

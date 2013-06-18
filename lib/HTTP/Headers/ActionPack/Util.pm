@@ -3,7 +3,7 @@ BEGIN {
   $HTTP::Headers::ActionPack::Util::AUTHORITY = 'cpan:STEVAN';
 }
 {
-  $HTTP::Headers::ActionPack::Util::VERSION = '0.08';
+  $HTTP::Headers::ActionPack::Util::VERSION = '0.09';
 }
 # ABSTRACT: General Utility module
 
@@ -42,15 +42,21 @@ sub join_header_words {
 }
 
 sub join_header_params {
-    my ($seperator, @params) = @_;
+    my ($separator, @params) = @_;
     my @attrs;
     while ( @params ) {
         my $k = shift @params;
         my $v = shift @params;
-        $v =~ s/([\"\\])/\\$1/g;  # escape " and \
+
+        if (defined $v) {
+            $v =~ s/([\"\\])/\\$1/g;  # escape " and \
+        }
+        else {
+            $v = q{};
+        }
         push @attrs => ($k . qq(="$v"));
     }
-    return join $seperator =>  @attrs;
+    return join $separator =>  @attrs;
 }
 
 1;
@@ -65,7 +71,7 @@ HTTP::Headers::ActionPack::Util - General Utility module
 
 =head1 VERSION
 
-version 0.08
+version 0.09
 
 =head1 SYNOPSIS
 

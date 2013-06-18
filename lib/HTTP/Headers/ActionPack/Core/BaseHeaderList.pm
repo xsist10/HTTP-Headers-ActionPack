@@ -3,7 +3,7 @@ BEGIN {
   $HTTP::Headers::ActionPack::Core::BaseHeaderList::AUTHORITY = 'cpan:STEVAN';
 }
 {
-  $HTTP::Headers::ActionPack::Core::BaseHeaderList::VERSION = '0.08';
+  $HTTP::Headers::ActionPack::Core::BaseHeaderList::VERSION = '0.09';
 }
 # ABSTRACT: A Base Header List
 
@@ -45,7 +45,7 @@ HTTP::Headers::ActionPack::Core::BaseHeaderList - A Base Header List
 
 =head1 VERSION
 
-version 0.08
+version 0.09
 
 =head1 SYNOPSIS
 
@@ -57,6 +57,8 @@ This is a base class for header lists. There are no real
 user serviceable parts in here.
 
 =head1 METHODS
+
+=over 4
 
 =item C<new_from_string ( $header_string )>
 

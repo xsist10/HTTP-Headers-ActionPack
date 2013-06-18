@@ -3,7 +3,7 @@ BEGIN {
   $HTTP::Headers::ActionPack::Core::Base::AUTHORITY = 'cpan:STEVAN';
 }
 {
-  $HTTP::Headers::ActionPack::Core::Base::VERSION = '0.08';
+  $HTTP::Headers::ActionPack::Core::Base::VERSION = '0.09';
 }
 # ABSTRACT: A Base class
 
@@ -45,7 +45,7 @@ HTTP::Headers::ActionPack::Core::Base - A Base class
 
 =head1 VERSION
 
-version 0.08
+version 0.09
 
 =head1 SYNOPSIS
 
@@ -56,6 +56,8 @@ version 0.08
 There are no real user serviceable parts in here.
 
 =head1 METHODS
+
+=over 4
 
 =item C<new>
 

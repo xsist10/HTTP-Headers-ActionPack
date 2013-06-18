@@ -8,6 +8,7 @@ Makefile.PL
 README
 README.md
 dist.ini
+eg/torture-test
 lib/HTTP/Headers/ActionPack.pm
 lib/HTTP/Headers/ActionPack/AcceptCharset.pm
 lib/HTTP/Headers/ActionPack/AcceptLanguage.pm
@@ -52,5 +53,10 @@ t/300-content-negotiation-media-type.t
 t/301-content-negotiation-language.t
 t/302-content-negotiation-charset.t
 t/303-content-negotiation-encoding.t
+t/400-undef-warnings.t
 t/author-pod-spell.t
+t/release-no-tabs.t
+t/release-pod-linkcheck.t
+t/release-pod-no404s.t
+t/release-pod-syntax.t
 weaver.ini

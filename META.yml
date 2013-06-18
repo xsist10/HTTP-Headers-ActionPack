@@ -8,6 +8,7 @@ build_requires:
   HTTP::Response: 0
   Test::Fatal: 0.0003
   Test::More: 0.88
+  Test::Warnings: 0
 configure_requires:
   ExtUtils::MakeMaker: 6.30
 dynamic_config: 0
@@ -36,7 +37,7 @@ requires:
 resources:
   bugtracker: https://rt.cpan.org/Dist/Display.html?Name=HTTP::Headers::ActionPack
   repository: https://github.com/stevan/http-headers-actionpack.git
-version: 0.08
+version: 0.09
 x_authority: cpan:STEVAN
 x_contributors:
   - 'Andrew Nelson <anelson@cpan.org>'

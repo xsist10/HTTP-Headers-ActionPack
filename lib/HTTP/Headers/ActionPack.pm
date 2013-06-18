@@ -3,7 +3,7 @@ BEGIN {
   $HTTP::Headers::ActionPack::AUTHORITY = 'cpan:STEVAN';
 }
 {
-  $HTTP::Headers::ActionPack::VERSION = '0.08';
+  $HTTP::Headers::ActionPack::VERSION = '0.09';
 }
 # ABSTRACT: HTTP Action, Adventure and Excitement
 
@@ -142,7 +142,7 @@ HTTP::Headers::ActionPack - HTTP Action, Adventure and Excitement
 
 =head1 VERSION
 
-version 0.08
+version 0.09
 
 =head1 SYNOPSIS
 
@@ -290,8 +290,6 @@ stringification operator, so normal usage of them should just
 do what you would expect (stringify in a sensible way). However
 this is not certain and so care should be taken when passing
 object headers onto another library that is expecting strings.
-
-=back
 
 =head1 AUTHOR
 

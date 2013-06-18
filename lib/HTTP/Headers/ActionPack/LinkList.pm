@@ -3,7 +3,7 @@ BEGIN {
   $HTTP::Headers::ActionPack::LinkList::AUTHORITY = 'cpan:STEVAN';
 }
 {
-  $HTTP::Headers::ActionPack::LinkList::VERSION = '0.08';
+  $HTTP::Headers::ActionPack::LinkList::VERSION = '0.09';
 }
 # ABSTRACT: A List of Link objects
 
@@ -42,7 +42,7 @@ HTTP::Headers::ActionPack::LinkList - A List of Link objects
 
 =head1 VERSION
 
-version 0.08
+version 0.09
 
 =head1 SYNOPSIS
 
@@ -54,6 +54,8 @@ This is a simple list of Links since the Link header
 can legally have more then one link in it.
 
 =head1 METHODS
+
+=over 4
 
 =item C<add ( $link )>
 
